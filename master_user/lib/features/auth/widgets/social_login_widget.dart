@@ -288,10 +288,6 @@ class SocialLoginWidget extends StatelessWidget {
       ),
     );
 
-    // webAuthenticationOptions: WebAuthenticationOptions(
-    //   clientId: Get.find<SplashController>().configModel.appleLogin[0].clientId,
-    //   redirectUri: Uri.parse('https://6ammart-web.6amtech.com/apple'),
-    // ),
 
     SocialLogInBody appleBodyModel = SocialLogInBody(
       email: credential.email, token: credential.authorizationCode, uniqueId: credential.authorizationCode,
