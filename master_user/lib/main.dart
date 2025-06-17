@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:sixam_mart/features/auth/controllers/auth_controller.dart';
 import 'package:sixam_mart/features/cart/controllers/cart_controller.dart';
@@ -51,20 +52,21 @@ Future<void> main() async {
 
   if(GetPlatform.isWeb){
     await Firebase.initializeApp(options: const FirebaseOptions(
-        apiKey: "AIzaSyD0Z911mOoWCVkeGdjhIKwWFPRgvd6ZyAw",
-        authDomain: "stackmart-500c7.firebaseapp.com",
-        projectId: "stackmart-500c7",
-        storageBucket: "stackmart-500c7.appspot.com",
-        messagingSenderId: "491987943015",
-        appId: "1:491987943015:web:d8bc7ab8dbc9991c8f1ec2"
+      apiKey: "AIzaSyAqoDzXTwqLpGxNOJGj5D1mL1e-2aYb_Mc",
+      authDomain: "multi-master-1.firebaseapp.com",
+      projectId: "multi-master-1",
+      storageBucket: "multi-master-1.firebasestorage.app",
+      messagingSenderId: "496804581818",
+      appId: "1:496804581818:web:a67caf5bd69f2272884d83",
+      measurementId: "G-FJL4MK8MZH"
     ));
   } else if(GetPlatform.isAndroid) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: "AIzaSyCc3OCd5I2xSlnftZ4bFAbuCzMhgQHLivA",
-        appId: "1:491987943015:android:a6fb4303cc4bf3d18f1ec2",
-        messagingSenderId: "491987943015",
-        projectId: "stackmart-500c7",
+        apiKey: "AIzaSyBP9f-5k7CiZlNOZRr4jqr1JLOYQXBWltc",
+        appId: "1:496804581818:android:bbce6f4934340529884d83",
+        messagingSenderId: "496804581818",
+        projectId: "multi-master-1",
       ),
     );
   } else {
@@ -164,6 +166,11 @@ class _MyAppState extends State<MyApp> {
             getPages: RouteHelper.routes,
             defaultTransition: Transition.topLevel,
             transitionDuration: const Duration(milliseconds: 500),
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
             builder: (BuildContext context, widget) {
               return MediaQuery(data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)), child: Material(
                 child: Stack(children: [

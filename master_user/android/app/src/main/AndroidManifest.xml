@@ -31,8 +31,11 @@
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCaCSJ0BZItSyXqBv8vpD1N4WBffJeKhLQ"/>
+            android:value="AIzaSyC5IKAtlS-vQksBM3g3bG43lPcSu5WlNbY"/>
 
         <activity
             android:name=".MainActivity"
@@ -62,7 +65,10 @@
 
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_channel_id"
-                android:value="6ammart" />
+                android:value="devetechno" />
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@drawable/notification_icon" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -81,7 +87,7 @@
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
 
-        <activity
+        <!-- <activity
             android:name="com.devetechno.master.sign_in_with_apple.SignInWithAppleCallback"
             android:exported="true"
             >
@@ -93,7 +99,7 @@
                 <data android:scheme="signinwithapple" />
                 <data android:path="callback" />
             </intent-filter>
-        </activity>
+        </activity> -->
 
     </application>
 </manifest>

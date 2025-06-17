@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FLTEnableImpeller</key>
+	<false/>
+    <key>io.flutter.embedded_views_preview</key>
+    <string>YES</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -31,14 +35,6 @@
 			<array>
 				<string>com.googleusercontent.apps.1000163153346-tmf9s0kpekc5mum4ubpga4a8gguk2592</string>
 				<string>fb380903914182154</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>app-1-491987943015-ios-4758bd1017291d268f1ec2</string>
 			</array>
 		</dict>
 	</array>
@@ -89,7 +85,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>io.flutter.embedded_views_preview</key>
-	<string>YES</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location is required to get current location to determine the nearest store coverage and to help you add accurate delivery addresses</string>
 </dict>
 </plist>
