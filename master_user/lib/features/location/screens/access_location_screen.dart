@@ -53,8 +53,8 @@ class _AccessLocationScreenState extends State<AccessLocationScreen> {
 
   void checkInternet() async {
     final List<ConnectivityResult> connectivityResult = await (Connectivity().checkConnectivity());
-    bool isConnected = connectivityResult.contains(ConnectivityResult.wifi) || connectivityResult.contains(ConnectivityResult.mobile);
-    if(!isConnected) {
+    bool isDisConnected = connectivityResult.contains(ConnectivityResult.none);
+    if(isDisConnected) {
       Get.offAll(()=> const NoInternetScreen());
     }
   }
