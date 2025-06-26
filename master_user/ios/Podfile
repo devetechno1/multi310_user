@@ -35,6 +35,11 @@ target 'Runner' do
   target 'RunnerTests' do
     inherit! :search_paths
   end
+  
+  target 'ImageNotification' do
+    inherit! :search_paths
+  end
+
 end
 
 post_install do |installer|
