@@ -20,11 +20,11 @@ class LocalizationController extends GetxController implements GetxService {
   late bool _isLtr = languageServiceInterface.setLTR(_locale);
   bool get isLtr => _isLtr;
 
-  List<LanguageModel> _languages = [];
-  List<LanguageModel> get languages => _languages;
-
   int _selectedLanguageIndex = 0;
   int get selectedLanguageIndex => _selectedLanguageIndex;
+
+  List<LanguageModel> _languages = [];
+  List<LanguageModel> get languages => _languages;
 
   void setLanguage(Locale locale, {bool fromBottomSheet = false}) {
     Get.updateLocale(locale);
@@ -50,7 +50,19 @@ class LocalizationController extends GetxController implements GetxService {
   }
 
   void loadCurrentLanguage() async {
-    _locale = languageServiceInterface.getLocaleFromSharedPref();
+    final Locale oldLocale = languageServiceInterface.getLocaleFromSharedPref();
+    bool isOldLocaleExist = false;
+    for (LanguageModel lang in AppConstants.languages) {
+      if(lang.languageCode == oldLocale.languageCode){
+        isOldLocaleExist = true;
+        break;
+      }
+    }
+    if (isOldLocaleExist) _locale = oldLocale;
+    
+    languageServiceInterface.updateHeader(_locale, Get.find<SplashController>().module?.id);
+    saveLanguage(_locale);
+    
     _isLtr = _locale.languageCode != 'ar';
     _selectedLanguageIndex = languageServiceInterface.setSelectedIndex(AppConstants.languages, _locale);
     _languages = [];
