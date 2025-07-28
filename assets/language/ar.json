@@ -1,4 +1,5 @@
 {
+  "please_upload_lower_size_file": "يرجى رفع ملف بحجم أصغر",
   "connection_to_api_server_failed": "فشل الاتصال بخادم API بسبب الاتصال بالإنترنت",
   "select_language": "اختر اللغة",
   "save": "حفظ",
